@@ -1,0 +1,20 @@
+name: Build
+on: [push]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run build
+      - run: npm run bundle
+      - run: xvfb-run -a npm run test
+      - run: npm run vsce
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vsix
+          path: packages/vscode-sourcemap-helper/sourcemap-helper-*.vsix

@@ -10,7 +10,7 @@
     "map",
     "minification"
   ],
-  "version": "0.0.4",
+  "version": "1.0.0",
   "publisher": "andersnm",
   "private": true,
   "author": {
@@ -104,7 +104,6 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run build && npm run bundle",
     "build": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "test": "vscode-test",
