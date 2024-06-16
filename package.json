@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "workspaces": [
+    "packages/vscode-sourcemap-helper",
+    "packages/vscode-sourcemap-helper-test"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build-all": "npm run build --workspaces",
+    "dev": "npm run dev --w vscode-sourcemap-helper",
+    "test": "npm run test --w packages/vscode-sourcemap-helper-test",
+    "vsce": "npm run vsce --w packages/vscode-sourcemap-helper",
+    "bundle": "npm run bundle --w packages/vscode-sourcemap-helper"
+  }
+}

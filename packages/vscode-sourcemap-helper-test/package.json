@@ -1,0 +1,32 @@
+{
+  "name": "sourcemap-helper-test",
+  "version": "0.0.0",
+  "publisher": "andersnm",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./out/src/extension",
+  "scripts": {
+    "build": "tsc -p ./",
+    "test": "vscode-test",
+    "testold": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.12.12",
+    "@types/node-fetch": "^2.6.11",
+    "@types/vscode": "1.90.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "@vscode/vsce": "^2.26.1",
+    "tslint": "^4.4.2",
+    "typescript": "5.4.5",
+    "vscode-test": "^1.6.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "source-map": "^0.7.4",
+    "vscode-sourcemap-helper": "file:../vscode-sourcemap-helper"
+  }
+}

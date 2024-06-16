@@ -1,0 +1,5 @@
+out/**
+src/**
+.gitignore
+tsconfig.json
+tslint.json

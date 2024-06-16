@@ -1,0 +1,127 @@
+{
+  "name": "sourcemap-helper",
+  "displayName": "Sourcemap Helper",
+  "description": "Sourcemap embellishments for VS Code: hover, lightbulb actions, preview inline/remote content.",
+  "keywords": [
+    "debugging",
+    "debug",
+    "sourcemap",
+    "source",
+    "map",
+    "minification"
+  ],
+  "version": "0.0.4",
+  "publisher": "andersnm",
+  "private": true,
+  "author": {
+    "name": "andersnm",
+    "url": "https://github.com/andersnm"
+  },
+  "homepage": "https://github.com/andersnm/vscode-sourcemap-helper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andersnm/vscode-sourcemap-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/andersnm/vscode-sourcemap-helper/issues"
+  },
+  "license": "MIT",
+  "icon": "sourcemap-helper128.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Debuggers",
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./out/index.d.ts",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sourcemap-helper.navigate",
+        "title": "Sourcemap: Navigate"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "sourcemap-helper.navigate",
+        "key": "shift+f7",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Sourcemap Helper",
+      "properties": {
+        "sourcemapHelper.hover.enable": {
+          "type": "boolean",
+          "default": true,
+          "title": "Sourcemaps: Hover preview",
+          "description": "Enable hover feature: Hover mouse over generated code to preview original source with link"
+        },
+        "sourcemapHelper.hover.lines": {
+          "type": "number",
+          "enum": [
+            1,
+            3,
+            5
+          ],
+          "default": 3,
+          "title": "Sourcemaps: Hover preview lines",
+          "description": "How many lines before and after the original line to preview on hover"
+        },
+        "sourcemapHelper.http.enable": {
+          "type": "boolean",
+          "default": true,
+          "title": "Sourcemaps: HTTP/HTTPS",
+          "description": "Enable HTTP/HTTPS downloads: Disable to prevent downloading anything"
+        },
+        "sourcemapHelper.debug.level": {
+          "type": "string",
+          "enum": [
+            "error",
+            "info",
+            "debug"
+          ],
+          "enumDescriptions": [
+            "Errors and warnings",
+            "Errors, warnings and information",
+            "Errors, warnings and diagnostics"
+          ],
+          "default": "info",
+          "title": "Sourcemaps: Logging",
+          "description": "Detail level for Output -> Sourcemaps"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build && npm run bundle",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "vscode-test",
+    "vsce": "vsce package --no-dependencies",
+    "bundle": "node bundle.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/node-fetch": "^2.6.11",
+    "@types/vscode": "1.90.0",
+    "@vscode/vsce": "^2.26.1",
+    "esbuild": "^0.21.5",
+    "tslint": "^4.4.2",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "source-map": "^0.7.4"
+  }
+}
