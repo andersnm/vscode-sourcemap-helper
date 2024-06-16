@@ -108,6 +108,7 @@
     "watch": "tsc -watch -p ./",
     "test": "vscode-test",
     "vsce": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
     "bundle": "node bundle.js"
   },
   "devDependencies": {

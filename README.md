@@ -21,6 +21,9 @@ npm run bundle
 
 # Create extension VSIX from bundle
 npm run vsce
+
+# Publish extension VSIX
+npm run publish -- -p ${VSCE_PAT}
 ```
 
 The extension is saved in `packages/vscode-sourcemap-helper/sourcemap-helper-(VERSION).vsix`
