@@ -2,6 +2,8 @@
 
 Monorepo for the VSCode Sourcemap Helper extension.
 
+![main branch](https://github.com/andersnm/vscode-sourcemap-helper/actions/workflows/build.yml/badge.svg?branch=main)
+
 ## Getting started
 
 ```bash
@@ -25,9 +27,9 @@ The extension is saved in `packages/vscode-sourcemap-helper/sourcemap-helper-(VE
 
 Projects:
 
-- [vscode-sourcemap-helper](./packages/vscode-sourcemap-helper/README.md)
+- [vscode-sourcemap-helper](./packages/vscode-sourcemap-helper/)
 - [vscode-sourcemap-helper-test](./packages/vscode-sourcemap-helper-test/)
 
 ## Shout outs
 
-Based on on https://github.com/vladimir-kotikov/vscode-sourcemaps-navigator by Vladimir Kotikov.
+Based on https://github.com/vladimir-kotikov/vscode-sourcemaps-navigator by Vladimir Kotikov.
